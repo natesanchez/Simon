@@ -5,13 +5,18 @@
 
 body {
 	height: 100vh;
-	background: grey;
+	background: #dbdbdb;
 }
 
+
+h1 {
+	margin-right: 80px;
+	margin-left: 80px;
+}
 .gameArea {
+	background: #f5f5f5;
 	width: 645px;
 	height: 545px;
-	background: grey;
 	position: absolute;
 	top:0;
 	bottom: 0;
@@ -21,37 +26,70 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 50px 1fr;
-	grid-column-gap: 30px;
+	grid-column-gap: 35px;
+	grid-row-gap: 5px;
+	border: 8px solid #474747;
+	border-radius: 10%;
 }
+
+#button1 {
+	height: 40px;
+	width: 80px;
+	background: red;
+	font-size: 20px;
+	border-radius: 10%;
+}
+
+#button2 {
+	height: 40px;
+	width: 80px;
+	background: red;
+	font-size: 20px;
+	border-radius: 10%;
+}
+
+#roundCounter {
+	height: 30px;
+	width: 100px;
+	background: red;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 #topLeft {
 	background: green;
 	grid-column: 1/ span 1;
 	border-radius: 18%;
+	border: 6px solid #474747;
 }
 
 #topRight {
 	background: red;
 	grid-column:: 2/ span 1;
 	border-radius: 18%;
+	border: 6px solid #474747;
 }
 
 #middle {
-	background: grey;
 	grid-column: 1/span 2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: yellow;
 }
 
 #bottomLeft {
 	background: yellow;
 	grid-row: 3/ span 1;
 	border-radius: 18%;
+	border: 6px solid #474747;	
 }
 
 #bottomRight {
 	background: blue;
 	grid-row: 3/ span 1;
 	border-radius: 18%;
+	border: 6px solid #474747;	
 }
