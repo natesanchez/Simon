@@ -9,9 +9,9 @@ body {
 }
 
 .gameArea {
-	width: 545px;
+	width: 645px;
 	height: 545px;
-	background: white;
+	background: grey;
 	position: absolute;
 	top:0;
 	bottom: 0;
@@ -21,27 +21,37 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 50px 1fr;
-	grid-gap: 4px;
-	border: 4px solid black;
+	grid-column-gap: 30px;
 }
 
 #topLeft {
 	background: green;
-	
+	grid-column: 1/ span 1;
+	border-radius: 18%;
 }
 
 #topRight {
 	background: red;
+	grid-column:: 2/ span 1;
+	border-radius: 18%;
 }
 
 #middle {
-	background: white;
+	background: grey;
+	grid-column: 1/span 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #bottomLeft {
 	background: yellow;
+	grid-row: 3/ span 1;
+	border-radius: 18%;
 }
 
 #bottomRight {
 	background: blue;
+	grid-row: 3/ span 1;
+	border-radius: 18%;
 }
