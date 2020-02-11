@@ -41,10 +41,14 @@ h1 {
 	border-radius: 10%;
 	margin-right: 5px;
 }
-
 #button1:hover {
 	cursor: pointer;
 }
+#button1:active {
+	position: relative;
+	top: 2px;
+}
+#button1:focus {outline:0;}
 
 #button2 {
 	height: 40px;
@@ -53,10 +57,14 @@ h1 {
 	font-size: 18px;
 	border-radius: 10%;
 }
-
 #button2:hover {
 	cursor: pointer;
 }
+#button2:active {
+	position: relative;
+	top: 2px;
+}
+#button2:focus {outline:0;}
 
 #roundCounter {
 	height: 40px;
@@ -79,6 +87,7 @@ h1 {
 	cursor: pointer;
 }
 
+
 #topRight {
 	background: red;
 	grid-column:: 2/ span 1;
@@ -88,6 +97,7 @@ h1 {
 #topRight:hover {
 	cursor: pointer;
 }
+
 
 #middle {
 	grid-column: 1/span 2;
@@ -106,6 +116,8 @@ h1 {
 	cursor: pointer;
 }
 
+
+
 #bottomRight {
 	background: blue;
 	grid-row: 3/ span 1;
@@ -115,3 +127,4 @@ h1 {
 #bottomRight:hover {
 	cursor: pointer;
 }
+
