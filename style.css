@@ -85,17 +85,19 @@ h1 {
 }
 #topLeft:hover {
 	cursor: pointer;
+	background: #00ff00;
 }
 
 
 #topRight {
-	background: red;
+	background: #C00000;
 	grid-column:: 2/ span 1;
 	border-radius: 18%;
 	border: 6px solid #474747;
 }
 #topRight:hover {
 	cursor: pointer;
+	background: #FF0000;
 }
 
 
@@ -107,24 +109,26 @@ h1 {
 }
 
 #bottomLeft {
-	background: yellow;
+	background: #C8C500;
 	grid-row: 3/ span 1;
 	border-radius: 18%;
 	border: 6px solid #474747;	
 }
 #bottomLeft:hover {
 	cursor: pointer;
+	background: yellow;
 }
 
 
 
 #bottomRight {
-	background: blue;
+	background: #00A8BB;
 	grid-row: 3/ span 1;
 	border-radius: 18%;
 	border: 6px solid #474747;	
 }
 #bottomRight:hover {
 	cursor: pointer;
+	background: #00E5FF;
 }
 

@@ -1,0 +1,2 @@
+let gameTurn = []
+let playerTurn = []
