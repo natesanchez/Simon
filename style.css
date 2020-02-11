@@ -5,16 +5,17 @@
 
 body {
 	height: 100vh;
-	background: #dbdbdb;
+	background: #c7c7c7;
 }
 
 
 h1 {
-	margin-right: 80px;
-	margin-left: 80px;
+	padding-right: 100px;
+	padding-left: 51px
+
 }
 .gameArea {
-	background: #f5f5f5;
+	background: #fcfcfc;
 	width: 645px;
 	height: 545px;
 	position: absolute;
@@ -34,27 +35,37 @@ h1 {
 
 #button1 {
 	height: 40px;
-	width: 80px;
+	width: 75px;
 	background: red;
-	font-size: 20px;
+	font-size: 18px;
 	border-radius: 10%;
+	margin-right: 5px;
+}
+
+#button1:hover {
+	cursor: pointer;
 }
 
 #button2 {
 	height: 40px;
-	width: 80px;
-	background: red;
-	font-size: 20px;
+	width: 75px;
+	background: #adadad;
+	font-size: 18px;
 	border-radius: 10%;
 }
 
+#button2:hover {
+	cursor: pointer;
+}
+
 #roundCounter {
-	height: 30px;
+	height: 40px;
 	width: 100px;
-	background: red;
+	background: #d1d1d1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 10%;
 }
 
 
@@ -64,6 +75,9 @@ h1 {
 	border-radius: 18%;
 	border: 6px solid #474747;
 }
+#topLeft:hover {
+	cursor: pointer;
+}
 
 #topRight {
 	background: red;
@@ -71,13 +85,15 @@ h1 {
 	border-radius: 18%;
 	border: 6px solid #474747;
 }
+#topRight:hover {
+	cursor: pointer;
+}
 
 #middle {
 	grid-column: 1/span 2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: yellow;
 }
 
 #bottomLeft {
@@ -86,10 +102,16 @@ h1 {
 	border-radius: 18%;
 	border: 6px solid #474747;	
 }
+#bottomLeft:hover {
+	cursor: pointer;
+}
 
 #bottomRight {
 	background: blue;
 	grid-row: 3/ span 1;
 	border-radius: 18%;
 	border: 6px solid #474747;	
+}
+#bottomRight:hover {
+	cursor: pointer;
 }
