@@ -85,6 +85,8 @@ h1 {
 }
 #topLeft:hover {
 	cursor: pointer;
+}
+#topLeft:active {
 	background: #00ff00;
 }
 
@@ -97,6 +99,8 @@ h1 {
 }
 #topRight:hover {
 	cursor: pointer;
+}
+#topRight:active {
 	background: #FF0000;
 }
 
@@ -108,6 +112,7 @@ h1 {
 	align-items: center;
 }
 
+
 #bottomLeft {
 	background: #C8C500;
 	grid-row: 3/ span 1;
@@ -116,9 +121,10 @@ h1 {
 }
 #bottomLeft:hover {
 	cursor: pointer;
+}
+#bottomLeft:active {
 	background: yellow;
 }
-
 
 
 #bottomRight {
@@ -129,6 +135,21 @@ h1 {
 }
 #bottomRight:hover {
 	cursor: pointer;
+}
+#bottomRight:active {
 	background: #00E5FF;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
