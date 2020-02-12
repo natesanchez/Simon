@@ -1,12 +1,7 @@
 let gameOrder = [];
 let playerOrder = [];
 let score = 0;
-let winning = true;
-
-// let greenAudio = document.querySelector("#greenAudio");
-// let yellowAudio = document.querySelector("#yellowAudio")
-// let blueAudio = document.querySelector("#blueAudio");
-// let redAudio = document.querySelector("#redAudio")
+let winning = false;
 
 let audioPlayer = new Audio();
 
@@ -62,13 +57,24 @@ function aiTurn () {
   });
 }
 
+function playerTurn (e) {
+	if (gameOrder.length === 0 ){
+		return;
+	}
+}
+
+
 function returnColor () {
   let colorsIndex = Math.floor(Math.random() * 4);
   return colors[colorsIndex];
 }
 
 function checkMatch () {
-
+	for (let i = 0; i < playerOrder.length; i++) {
+		if (playerOrder[i] !== gameOrder[i]) {
+			winning = false;
+		}
+	}
 }
 
 function render () {
@@ -76,8 +82,21 @@ function render () {
 		playButton.innerText = "Playing";
   		scoreNumber.innerText = score;
   } else {
+  		blinkColors();
+  		clearColors();
+  		blinkColors();
+  		clearColors();
+  		blinkColors();
   	  	scoreNumber.innerText = "NO!";
   }
+}
+
+
+function blinkColors () {
+	topLeft.style.background= "#00ff00";
+	topRight.style.background= "#FF0000";
+	bottomLeft.style.background= "yellow";
+	bottomRight.style.background= "#00E5FF";
 }
 
 function clearColors () {
@@ -85,13 +104,6 @@ function clearColors () {
 	topRight.style.background= "#C00000";
 	bottomLeft.style.background= "#C8C500";
 	bottomRight.style.background= "#00A8BB";
-}
-
-function blinkColors () {
-	topLeft.style.background= "#00ff00";
-	topRight.style.background= "#FF0000";
-	bottomLeft.style.background= "yellow";
-	bottomRight.style.background= "#00E5FF";
 }
 
 
