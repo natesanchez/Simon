@@ -59,7 +59,16 @@ function aiTurn () {
   });
 }
 
-
+function targetColor (target) {
+  if (target.id === "topLeft") { 
+  	return colors[0] }
+  if (target.id === "bottomLeft") {
+  	return colors[1] }
+  if (target.id === "bottomRight") {
+  	return colors[2] }
+  if (target.id === "topRight") {
+  	return colors[3] }
+}
 
 function returnColor () {
   let colorsIndex = Math.floor(Math.random() * 4);
