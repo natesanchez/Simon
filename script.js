@@ -35,20 +35,22 @@ resetButton.addEventListener("click", reset);
 function play () {
 	render();
 	playButton.removeEventListener("click", play);
+	setTimeout(aiTurn, 800);
 }
 
 function reset () {
-	let gameOrder = [];
-	let playerOrder = [];
-	let score = 0;
-	let winning = true;
+	gameOrder = [];
+	playerOrder = [];
+	score = 0;
+	winning = true;
 	playButton.innerText = "Play";
 	scoreNumber.innerText = "--"
 	playButton.addEventListener("click", play);
 }
 
 function aiTurn () {
-
+	gameOrder.push(returnColor());
+	console.log(gameOrder);
 }
 
 function returnColor () {
@@ -82,8 +84,6 @@ function blinkColors () {
 	bottomLeft.style.background= "yellow";
 	bottomRight.style.background= "#00E5FF";
 }
-
-returnColor();
 
 
 
