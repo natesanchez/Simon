@@ -27,6 +27,11 @@ let scoreNumber = document.querySelector("#scoreNumber");
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
 
+green.source.addEventListener('click', playerTurn);
+yellow.source.addEventListener('click', playerTurn);
+blue.source.addEventListener('click', playerTurn);
+red.source.addEventListener('click', playerTurn);
+
 
 function play () {
 	render();
@@ -35,7 +40,6 @@ function play () {
 }
 
 function reset () {
-	// clearColors();
 	gameOrder = [];
 	playerOrder = [];
 	score = 0;
@@ -57,6 +61,26 @@ function aiTurn () {
         }, 800);
       }, i * 1000);
   });
+}
+
+function playerTurn (e) {
+	if (gameOrder.length === 0 ){
+		return;
+	}
+	pushPlayerInput(e);
+	checkMatch(playerOrder, gameOrder)
+	
+}
+
+function pushPlayerInput (e) {
+  if(playerOrder.length > gameOrder.length) {
+  	return; }
+  if (!winning) {
+  	return; }
+  	let colorObject = targetColor(e.target);
+  	audioPlayer.src = colorObject.audioSource;
+  	audioPlayer.play();
+  	playerOrder.push(colorObject)
 }
 
 function targetColor (target) {
@@ -88,25 +112,25 @@ function render () {
 		playButton.innerText = "Playing";
   		scoreNumber.innerText = score;
   } else {
-  		blinkColors();
+  		// blinkColors();
   	  	scoreNumber.innerText = "NO!";
   }
 }
 
 
-function blinkColors () {
-	green.source.style.background= "#FF0000";
-	yellow.source.style.background= "#FF0000";
-	blue.source.style.background= "#FF0000";
-	red.source.style.background= "#FF0000";
-}
+// function blinkColors () {
+// 	green.source.style.background= "#FF0000";
+// 	yellow.source.style.background= "#FF0000";
+// 	blue.source.style.background= "#FF0000";
+// 	red.source.style.background= "#FF0000";
+// }
 
-function clearColors () {
-	green.source.style.background= "green";
-	red.source.style.background= "#C00000";
-	yellow.source.style.background= "#C8C500";
-	blue.source.style.background= "#00A8BB";
-}
+// function clearColors () {
+// 	green.source.style.background= "green";
+// 	red.source.style.background= "#C00000";
+// 	yellow.source.style.background= "#C8C500";
+// 	blue.source.style.background= "#00A8BB";
+// }
 
 
 
