@@ -59,7 +59,7 @@ function aiTurn () {
         setTimeout(function(){
           colorObject.source.classList.remove("blink"); 
         }, 800);
-      }, i * 1000);
+      }, i * 1100);
   });
 }
 
@@ -69,7 +69,14 @@ function playerTurn (e) {
 	}
 	pushPlayerInput(e);
 	checkMatch(playerOrder, gameOrder)
-	
+	if (winning && (playerOrder.length === gameOrder.length)) {
+	playerOrder = [];
+    score++;
+    render();
+    setTimeout(aiTurn, 1100);
+  } else {
+    render();
+  }
 }
 
 function pushPlayerInput (e) {
