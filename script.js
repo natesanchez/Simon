@@ -1,7 +1,7 @@
 let gameOrder = [];
 let playerOrder = [];
 let score = 0;
-let winning = false;
+let winning = true;
 
 let audioPlayer = new Audio();
 
@@ -27,6 +27,7 @@ let scoreNumber = document.querySelector("#scoreNumber");
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
 
+
 function play () {
 	render();
 	playButton.removeEventListener("click", play);
@@ -34,6 +35,7 @@ function play () {
 }
 
 function reset () {
+	// clearColors();
 	gameOrder = [];
 	playerOrder = [];
 	score = 0;
@@ -57,11 +59,6 @@ function aiTurn () {
   });
 }
 
-function playerTurn (e) {
-	if (gameOrder.length === 0 ){
-		return;
-	}
-}
 
 
 function returnColor () {
@@ -83,28 +80,25 @@ function render () {
   		scoreNumber.innerText = score;
   } else {
   		blinkColors();
-  		clearColors();
-  		blinkColors();
-  		clearColors();
-  		blinkColors();
   	  	scoreNumber.innerText = "NO!";
   }
 }
 
 
 function blinkColors () {
-	topLeft.style.background= "#00ff00";
-	topRight.style.background= "#FF0000";
-	bottomLeft.style.background= "yellow";
-	bottomRight.style.background= "#00E5FF";
+	green.source.style.background= "#FF0000";
+	yellow.source.style.background= "#FF0000";
+	blue.source.style.background= "#FF0000";
+	red.source.style.background= "#FF0000";
 }
 
 function clearColors () {
-	topLeft.style.background= "green";
-	topRight.style.background= "#C00000";
-	bottomLeft.style.background= "#C8C500";
-	bottomRight.style.background= "#00A8BB";
+	green.source.style.background= "green";
+	red.source.style.background= "#C00000";
+	yellow.source.style.background= "#C8C500";
+	blue.source.style.background= "#00A8BB";
 }
+
 
 
 
