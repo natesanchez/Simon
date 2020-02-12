@@ -1,44 +1,39 @@
 let gameOrder = [];
 let playerOrder = [];
-let blink;
-let playerTurn;
-let gameTurn
-let perfect;
-let Interval;
-let sound = true
-let win;
+let score = 0;
+let winning = true;
 
-let scoreCounter = document.querySelector("h3");
-//Boxes
-let topLeft = document.querySelector("#topLeft");
-let topRight = document.querySelector("#topRight");
-let bottomLeft = document.querySelector("#bottomLeft");
-let bottomRight = document.querySelector("#bottomRight");
-//Audio
+let colors = [green, red, yellow, blue]
+
+let playButton = document.querySelector("#button1");
+let resetButton = document.querySelector("#button2")
+let scoreNumber = document.querySelector("#scoreNumber");
+
+let green = document.querySelector("#topLeft");
+let red = document.querySelector("#topRight");
+let yellow = document.querySelector("#bottomLeft");
+let blue = document.querySelector("#bottomRight");
+
 let greenAudio = document.querySelector("#greenAudio");
 let yellowAudio = document.querySelector("#yellowAudio")
 let blueAudio = document.querySelector("#blueAudio");
 let redAudio = document.querySelector("#redAudio")
 
-topLeft.addEventListener("click", greenSound);
-topRight.addEventListener("click", redSound);
-bottomLeft.addEventListener("click", yellowSound);
-bottomRight.addEventListener("click", blueSound);
 
-
-
-function greenSound () {
-	greenAudio.play();
+function clearColors () {
+	topLeft.style.background= "green";
+	topRight.style.background= "#C00000";
+	bottomLeft.style.background= "#C8C500";
+	bottomRight.style.background= "#00A8BB";
 }
 
-function yellowSound () {
-	yellowAudio.play();
+function blinkColors () {
+	topLeft.style.background= "#00ff00";
+	topRight.style.background= "#FF0000";
+	bottomLeft.style.background= "yellow";
+	bottomRight.style.background= "#00E5FF";
 }
 
-function blueSound () {
-	blueAudio.play();
-}
 
-function redSound () {
-	redAudio.play();
-}
+
+
