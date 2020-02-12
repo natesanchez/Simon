@@ -33,8 +33,7 @@ playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
 
 function play () {
-	playButton.innerText = "Playing";
-	scoreNumber.innerText = "0"
+	render();
 	playButton.removeEventListener("click", play);
 }
 
@@ -62,7 +61,12 @@ function checkMatch () {
 }
 
 function render () {
-
+	if (winning) {
+		playButton.innerText = "Playing";
+  		scoreNumber.innerText = score;
+  } else {
+  	  	scoreNumber.innerText = "NO!";
+  }
 }
 
 function clearColors () {
