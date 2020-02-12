@@ -141,15 +141,19 @@ h1 {
 }
 
 
+#topLeft.blink {
+    background: #00ff00;
+}
 
+#bottomLeft.blink {
+    background: yellow;
+}
 
+#bottomRight.blink {
+    background: #00E5FF;
+}
 
-
-
-
-
-
-
-
-
+#topRight.blink {
+    background: #FF0000;
+}
 
