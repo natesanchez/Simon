@@ -3,21 +3,29 @@ let playerOrder = [];
 let score = 0;
 let winning = true;
 
-let green = document.querySelector("#topLeft");
-let red = document.querySelector("#topRight");
-let yellow = document.querySelector("#bottomLeft");
-let blue = document.querySelector("#bottomRight");
-
-let colors = [green, red, yellow, blue]
-
-let playButton = document.querySelector("#button1");
-let resetButton = document.querySelector("#button2")
-let scoreNumber = document.querySelector("#scoreNumber");
-
 let greenAudio = document.querySelector("#greenAudio");
 let yellowAudio = document.querySelector("#yellowAudio")
 let blueAudio = document.querySelector("#blueAudio");
 let redAudio = document.querySelector("#redAudio")
+
+class Color {
+  constructor(name, source, audioSource){
+    this.name = name;
+    this.source = document.querySelector(source);
+    this.audioSource = audioSource;
+  }
+}
+
+let green = new Color("green", "#topLeft", greenAudio);
+let yellow = new Color("yellow", "#bottomLeft", yellowAudio);
+let blue = new Color("green", "#bottomRight", blueAudio);
+let red = new Color("green", "#topRight", redAudio);
+
+let colors = [green, yellow, blue, red]
+
+let playButton = document.querySelector("#button1");
+let resetButton = document.querySelector("#button2")
+let scoreNumber = document.querySelector("#scoreNumber");
 
 playButton.addEventListener("click", play)
 
@@ -30,8 +38,6 @@ playButton.removeEventListener("click", play);
 function reset () {
 
 }
-
-
 
 function clearColors () {
 	topLeft.style.background= "green";
@@ -46,7 +52,6 @@ function blinkColors () {
 	bottomLeft.style.background= "yellow";
 	bottomRight.style.background= "#00E5FF";
 }
-
 
 
 
