@@ -20,8 +20,8 @@ class Color {
 
 let green = new Color("green", "#topLeft", greenAudio);
 let yellow = new Color("yellow", "#bottomLeft", yellowAudio);
-let blue = new Color("green", "#bottomRight", blueAudio);
-let red = new Color("green", "#topRight", redAudio);
+let blue = new Color("blue", "#bottomRight", blueAudio);
+let red = new Color("red", "#topRight", redAudio);
 
 let colors = [green, yellow, blue, red]
 
@@ -29,20 +29,32 @@ let playButton = document.querySelector("#button1");
 let resetButton = document.querySelector("#button2")
 let scoreNumber = document.querySelector("#scoreNumber");
 
-playButton.addEventListener("click", play)
+playButton.addEventListener("click", play);
+resetButton.addEventListener("click", reset);
 
 function play () {
-playButton.innerText = "Playing";
-scoreNumber.innerText = "0"
-playButton.removeEventListener("click", play);
+	playButton.innerText = "Playing";
+	scoreNumber.innerText = "0"
+	playButton.removeEventListener("click", play);
 }
 
 function reset () {
-
+	let gameOrder = [];
+	let playerOrder = [];
+	let score = 0;
+	let winning = true;
+	playButton.innerText = "Play";
+	scoreNumber.innerText = "--"
+	playButton.addEventListener("click", play);
 }
 
 function aiTurn () {
 
+}
+
+function returnColor () {
+  let colorsIndex = Math.floor(Math.random() * 4);
+  console.log(colors[colorsIndex]);
 }
 
 function checkMatch () {
@@ -50,7 +62,7 @@ function checkMatch () {
 }
 
 function render () {
-	
+
 }
 
 function clearColors () {
@@ -66,6 +78,8 @@ function blinkColors () {
 	bottomLeft.style.background= "yellow";
 	bottomRight.style.background= "#00E5FF";
 }
+
+returnColor();
 
 
 
