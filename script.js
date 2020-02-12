@@ -8,6 +8,8 @@ let yellowAudio = document.querySelector("#yellowAudio")
 let blueAudio = document.querySelector("#blueAudio");
 let redAudio = document.querySelector("#redAudio")
 
+let audioPlayer = new Audio();
+
 class Color {
   constructor(name, source, audioSource){
     this.name = name;
@@ -37,6 +39,18 @@ playButton.removeEventListener("click", play);
 
 function reset () {
 
+}
+
+function aiTurn () {
+
+}
+
+function checkMatch () {
+
+}
+
+function render () {
+	
 }
 
 function clearColors () {
