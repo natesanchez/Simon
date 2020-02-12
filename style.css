@@ -66,7 +66,7 @@ h1 {
 }
 #button2:focus {outline:0;}
 
-#roundCounter {
+#scoreCounter {
 	height: 40px;
 	width: 100px;
 	background: #d1d1d1;
