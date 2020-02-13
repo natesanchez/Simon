@@ -40,6 +40,7 @@ function play () {
 }
 
 function reset () {
+  clearColors();
 	gameOrder = [];
 	playerOrder = [];
 	score = 0;
@@ -51,22 +52,21 @@ function reset () {
 
 function aiTurn () {
 	gameOrder.push(returnColor());
-	gameOrder.forEach((colorObject, i) => {
-      setTimeout((i) => {
+	gameOrder.forEach((colorObject, index) => {
+      setTimeout((index) => {
         colorObject.source.classList.add("blink");
         audioPlayer.src = colorObject.audioSource;
         audioPlayer.play();
         setTimeout(function(){
           colorObject.source.classList.remove("blink"); 
         }, 800);
-      }, i * 1100);
-  });
+      }, index * 1100);
+  })
 }
 
 function playerTurn (e) {
 	if (gameOrder.length === 0 ){
-		return;
-	}
+		return;}
 	pushPlayerInput(e);
 	checkMatch(playerOrder, gameOrder)
 	if (winning && (playerOrder.length === gameOrder.length)) {
@@ -119,25 +119,22 @@ function render () {
 		playButton.innerText = "Playing";
   		scoreNumber.innerText = score;
   } else {
-  		// blinkColors();
-  	  	scoreNumber.innerText = "NO!";
+  		blinkColors();
+  	  scoreNumber.innerText = "NO!";
   }
 }
 
+function blinkColors () {
+  colors.forEach((color) => {
+    color.source.classList.add("wrong");
+  })
+}
 
-// function blinkColors () {
-// 	green.source.style.background= "#FF0000";
-// 	yellow.source.style.background= "#FF0000";
-// 	blue.source.style.background= "#FF0000";
-// 	red.source.style.background= "#FF0000";
-// }
-
-// function clearColors () {
-// 	green.source.style.background= "green";
-// 	red.source.style.background= "#C00000";
-// 	yellow.source.style.background= "#C8C500";
-// 	blue.source.style.background= "#00A8BB";
-// }
+function clearColors () {
+  colors.forEach((color) => {
+    color.source.classList.remove("wrong");
+  })
+}
 
 
 

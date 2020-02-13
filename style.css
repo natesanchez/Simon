@@ -22,12 +22,12 @@ h1 {
 	background: #fcfcfc;
 	width: 645px;
 	height: 545px;
-	/*position: absolute;
+	position: relative;
 	top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;*/
+	margin: auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 50px 1fr;
@@ -35,6 +35,8 @@ h1 {
 	grid-row-gap: 5px;
 	border: 8px solid #474747;
 	border-radius: 10%;
+	flex-shrink: 0;
+	overflow: hidden;
 }
 
 #button1 {
@@ -161,10 +163,19 @@ h1 {
     background: #FF0000;
 }
 
-/*@media screen and (max-width: 600px) {
-  .gameArea {
-   height: 450px;
-   width: 370px;
-  }
+#topLeft.wrong {
+    background: #FF0000;
 }
-*/
+
+#bottomLeft.wrong {
+    background: #FF0000;
+}
+
+#bottomRight.wrong {
+    background: #FF0000;
+}
+
+#topRight.wrong {
+    background: #FF0000;
+}
+
