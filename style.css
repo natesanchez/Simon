@@ -6,6 +6,10 @@
 body {
 	height: 100vh;
 	background: #c7c7c7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 
@@ -18,12 +22,12 @@ h1 {
 	background: #fcfcfc;
 	width: 645px;
 	height: 545px;
-	position: absolute;
+	/*position: absolute;
 	top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: auto;*/
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 50px 1fr;
@@ -157,10 +161,10 @@ h1 {
     background: #FF0000;
 }
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .gameArea {
-   height:400px;
-   width:400px;
+   height: 450px;
+   width: 370px;
   }
 }
-
+*/
