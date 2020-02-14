@@ -14,6 +14,6 @@ HTML, CSS, Vanilla Javascript
 # Authors
 Nate Sanchez
 
-#Acknowledgements
+# Acknowledgements
 freeCodeCamp for the Simon audio files.
 
