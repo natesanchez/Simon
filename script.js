@@ -1,6 +1,7 @@
 let gameOrder = [];
 let playerOrder = [];
 let score = 0;
+let highscore = 0;
 let winning = true;
 let allowClick = false;
 let on = true;
@@ -24,6 +25,7 @@ let colors = [green, yellow, blue, red]
 let playButton = document.querySelector("#button1");
 let resetButton = document.querySelector("#button2");
 let scoreNumber = document.querySelector("#scoreNumber");
+let highScoreNumber = document.querySelector("#highscore");
 
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
@@ -89,6 +91,10 @@ function playerTurn (e) {
 	if (winning && (playerOrder.length === gameOrder.length)) {
 	playerOrder = [];
     score++;
+    if (score > highscore) {
+      highscore++;
+      highScoreNumber.innerText = ` Your Highscore is: ${highscore}`;
+    }
     render();
     setTimeout(aiTurn, 1100);
   } else {
@@ -141,6 +147,7 @@ function render () {
   } else {
   		blinkColors();
   	  scoreNumber.innerText = "NO!";
+      highScoreNumber.innerText = ` Your Highscore is: ${highscore}`;
   }
 }
 
