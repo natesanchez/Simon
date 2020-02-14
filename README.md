@@ -10,3 +10,10 @@ HTML, CSS, Vanilla Javascript
 3. An aiTurn function then goes through each item in the ai array and plays ans blinks the colors within.
 4. When its the user's turn, the user must fill up their array to match that of the ai array to score a point. (event listeners).
 5. If the user inputs an incorrect order, then the game will end with all lights turning red. this is done with a checkMatch function that is run after every user input.
+
+# Authors
+Nate Sanchez
+
+#Acknowledgements
+freeCodeCamp for the Simon audio files.
+
