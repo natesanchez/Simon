@@ -98,7 +98,6 @@ h1 {
 
 #topRight {
 	background: #C00000;
-	grid-column:: 2/ span 1;
 	border-radius: 18%;
 	border: 6px solid #474747;
 }
