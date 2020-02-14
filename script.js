@@ -2,6 +2,7 @@ let gameOrder = [];
 let playerOrder = [];
 let score = 0;
 let winning = true;
+let allowClick = false;
 
 let audioPlayer = new Audio();
 
@@ -21,7 +22,7 @@ let red = new Color("red", "#topRight", "sounds/red.mp3");
 let colors = [green, yellow, blue, red]
 
 let playButton = document.querySelector("#button1");
-let resetButton = document.querySelector("#button2")
+let resetButton = document.querySelector("#button2");
 let scoreNumber = document.querySelector("#scoreNumber");
 
 playButton.addEventListener("click", play);
@@ -50,13 +51,23 @@ function reset () {
 	playButton.addEventListener("click", play);
 }
 
+function letClick () {
+  allowClick = true;
+}
+
 function aiTurn () {
+  let itemsProcessed = 0;
+  allowClick = false
 	gameOrder.push(returnColor());
 	gameOrder.forEach((colorObject, index) => {
       setTimeout((index) => {
         colorObject.source.classList.add("blink");
         audioPlayer.src = colorObject.audioSource;
         audioPlayer.play();
+        itemsProcessed ++
+        if(itemsProcessed === gameOrder.length) {
+            letClick();
+             } 
         setTimeout(function(){
           colorObject.source.classList.remove("blink"); 
         }, 800);
@@ -64,7 +75,9 @@ function aiTurn () {
   })
 }
 
+
 function playerTurn (e) {
+  if (allowClick == true) {
 	if (gameOrder.length === 0 ){
 		return;}
 	pushPlayerInput(e);
@@ -78,8 +91,10 @@ function playerTurn (e) {
     render();
   }
 }
+}
 
 function pushPlayerInput (e) {
+  if (allowClick == true) {
   if(playerOrder.length > gameOrder.length) {
   	return; }
   if (!winning) {
@@ -88,6 +103,7 @@ function pushPlayerInput (e) {
   	audioPlayer.src = colorObject.audioSource;
   	audioPlayer.play();
   	playerOrder.push(colorObject)
+  }
 }
 
 function targetColor (target) {
