@@ -3,7 +3,7 @@ let playerOrder = [];
 let score = 0;
 let winning = true;
 let allowClick = false;
-
+let on = true;
 let audioPlayer = new Audio();
 
 class Color {
@@ -35,12 +35,14 @@ red.source.addEventListener('click', playerTurn);
 
 
 function play () {
+  on = true;
 	render();
 	playButton.removeEventListener("click", play);
 	setTimeout(aiTurn, 800);
 }
 
 function reset () {
+  on = false;
   clearColors();
 	gameOrder = [];
 	playerOrder = [];
@@ -56,6 +58,7 @@ function letClick () {
 }
 
 function aiTurn () {
+  if (on) {
   let itemsProcessed = 0;
   allowClick = false
 	gameOrder.push(returnColor());
@@ -72,7 +75,8 @@ function aiTurn () {
           colorObject.source.classList.remove("blink"); 
         }, 800);
       }, index * 1100);
-  })
+    })
+  }
 }
 
 
