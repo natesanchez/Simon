@@ -1,8 +1,8 @@
 # Simon
 A re-creation of the classic Simon electronic game of lights and sounds in which players must repeat random sequences of lights by pressing the colored pads in the correct order.
-![Test Image 1]("Simonplaying.png")
+![Test Image 1](Simonplaying.png)
 
-![Test Image 2]("simonwrong.png")
+![Test Image 2](simonwrong.png)
 
 # Technologies Used
 HTML, CSS, Vanilla Javascript
